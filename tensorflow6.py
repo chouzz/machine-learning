@@ -33,7 +33,7 @@ prediction = add_layer(l1,10,1,activation_function=None)
 loss = tf.reduce_mean(tf.reduce_sum(tf.square(y_data - prediction),
                                     reduction_indices=[1]))
 #square平方，reduce_sum求和，reduce_mean求平均
-train_step = tf.train.GradientDescentOptimizer(0.1).minimize(loss)
+train_step = tf.train.GradientDescentOptimizer(0.3).minimize(loss)
 #训练步骤，使用最常用的优化器，0.1为学习效率，优化器是要使loss最小
 
 init = tf.initialize_all_variables()
