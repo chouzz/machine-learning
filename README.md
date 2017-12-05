@@ -1,2 +1,2 @@
 # machine-learning
-this is a machine learning example.
+Here are some examples of machine learning.
