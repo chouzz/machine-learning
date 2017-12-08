@@ -53,7 +53,7 @@ fig = plt.figure()#生成一个图片框
 ax = fig.add_subplot(1,1,1)#连续性画图，编号1,1,1,
 ax.scatter(x_data,y_data)#以点的形式再图中显示
 plt.ion()#在show（）之后，程序会暂停，这句是让程序不暂停
-plt.show()#打印输出
+plt.show()#打印输出￼
 
 for i in range(1000):#重复1000次
     sess.run(train_step,feed_dict={xs:x_data,ys:y_data})
@@ -65,7 +65,9 @@ for i in range(1000):#重复1000次
             pass
         prediction_value = sess.run(prediction,feed_dict={xs:x_data})
         lines = ax.plot(x_data,prediction_value,'r-',lw=5)#将prediction_value plot上去,曲线形式，x轴x_data，y轴value，
+        
         #红色为线，宽度为5
-        plt.pause(0.1)#暂停0.1秒
+        plt.pause(3)#暂停0.1秒
+        
         
              
