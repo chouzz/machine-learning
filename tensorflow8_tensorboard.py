@@ -1,12 +1,5 @@
 # -*- coding: utf-8 -*-
 """
-Created on Thu Dec  7 18:33:34 2017
-
-@author: hua
-"""
-
-# -*- coding: utf-8 -*-
-"""
 Created on Tue Dec  5 14:20:30 2017
 
 @author: hua
@@ -50,7 +43,7 @@ with tf.name_scope('train'):
     train_step = tf.train.GradientDescentOptimizer(0.3).minimize(loss)
 #训练步骤，使用最常用的优化器，0.1为学习效率，优化器是要使loss最小
 
-init = tf.initialize_all_variables()
+init = tf.global_variables_initializer()
 sess = tf.Session()
 writer = tf.summary.FileWriter("d://logs",sess.graph)#有文件，但无法显示
 sess.run(init)

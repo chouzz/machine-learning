@@ -1,12 +1,5 @@
 # -*- coding: utf-8 -*-
 """
-Created on Wed Dec  6 19:03:53 2017
-
-@author: hua
-"""
-
-# -*- coding: utf-8 -*-
-"""
 Created on Tue Dec  5 14:20:30 2017
 
 @author: hua
@@ -31,7 +24,7 @@ x_data = np.linspace(-1,1,300)[:,np.newaxis]#-1到1之间，维度为300
 noise = np.random.normal(0,0.05,x_data.shape)#方差0.05 ，格式是x_data形式
 y_data = np.square(x_data)-0.5 + noise#加上噪点，不完全是二次函数
 
-xs = tf.placeholder(tf.float32,[None,1])
+xs = tf.placeholder(tf.float32,[None,1]) 
 ys = tf.placeholder(tf.float32,[None,1])
 #xs ys 要给train_step的值，None是指无论给多少个例子都可以
 l1 = add_layer(xs,1,10,activation_function=tf.nn.relu)
@@ -67,7 +60,7 @@ for i in range(1000):#重复1000次
         lines = ax.plot(x_data,prediction_value,'r-',lw=5)#将prediction_value plot上去,曲线形式，x轴x_data，y轴value，
         
         #红色为线，宽度为5
-        plt.pause(3)#暂停0.1秒
+        plt.pause(0.2)#暂停0.1秒
         
         
              
