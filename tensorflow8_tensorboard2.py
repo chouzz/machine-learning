@@ -16,7 +16,7 @@ def add_layer(inputs,in_size,out_size,n_layer,activation_function=None):#定义�
             biases = tf.Variable(tf.zeros([1,out_size])+0.1)#类似列表的东西
             tf.summary.histogram(layer_name+'/biases',biases)
         with tf.name_scope('Wx_plus_b'): 
-            Wx_plus_b = tf.matmul(inputs,Weights) + biases #矩阵乘法，还没激活的值存在这里
+            Wx_plus_b = tf.add(tf.matmul(inputs,Weights) + biases) #矩阵乘法，还没激活的值存在这里
         if activation_function is None:
             outputs = Wx_plus_b#线性函数，直接输出
         else:
