@@ -74,15 +74,15 @@ def majorityCnt(classList):     # classList 为一个列表
 
 def creatTree(data, labels):
     classList = [example[-1] for example in data]       # 遍历数据集最后一列
-    if classList.count(classList[0]) == len(classList):     #
-        return classList[0]
-    if len(data[0]) == 1:
+    if classList.count(classList[0]) == len(classList):     # 类别中的概率是否确定，即概率为1时，提前到达叶节点
+        return classList[0]                             # 返回该类别
+    if len(data[0]) == 1:       # 是否只剩下一个类别，到达最终的叶节点
         return majorityCnt(classList)
-    bestFeature = chooseBestFeatSplit(data)
-    bestFeatureLabel = labels[bestFeature]
-    myTree = {bestFeatureLabel:{}}
-    del(labels[bestFeature])
-    featValues = [example[bestFeature] for example in data]
+    bestFeature = chooseBestFeatSplit(data)         # 选择最好的特征
+    bestFeatureLabel = labels[bestFeature]          # 最好的特征表现
+    myTree = {bestFeatureLabel:{}}                  # 创建树
+    del(labels[bestFeature])                        # 删除已经计算过的特征
+    featValues = [example[bestFeature] for example in data]     # 遍历根据最佳特征分割完成后的类别中的属性
     uniqueVals = set(featValues)
     for value in uniqueVals:
         sublabels = labels[:]
