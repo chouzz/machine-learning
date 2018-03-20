@@ -60,7 +60,7 @@ for i in range(1000):#重复1000次
         lines = ax.plot(x_data,prediction_value,'r-',lw=5)#将prediction_value plot上去,曲线形式，x轴x_data，y轴value，
         
         #红色为线，宽度为5
-        plt.pause(0.2)#暂停0.1秒
+        plt.pause(0.4)#暂停0.1秒
         
         
              
