@@ -38,3 +38,4 @@ plt.plot(x, y, 'ro')
 plt.plot(x, optimizer(), 'b-')
 #optimizer()
 plt.show()
+
